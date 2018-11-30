@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="edu.co.sergio.mundo.vo.*"%>
+<%@ page import="VO"%>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
     "http://www.w3.org/TR/html4/loose.dtd">
@@ -21,13 +21,13 @@ body {
             <%
               if(request.getAttribute("escuelas")!=null){
             %>   
-            <form action="Escuela" method="post">
-                <select name = "escuela">
+            <form action="Estudiante" method="post">
+                <select name = "Estudiante">
            <%
-              List<Escuela> escuelas  = (List<Escuela>)request.getAttribute("escuelas");  
-               for (Escuela escuela : escuelas) {
+              List<Estudiante> Estudiantes  = (List<Estudiante>)request.getAttribute("Estudiantes");  
+               for (Estudiante estudiante : estudiante) {
              %>
-               <option value="<%=escuela.getCodigo()%>"><%=escuela.getNombre()%></option>
+               <option value="<%=estudiante.getNombreo()%>"><%=estudiante.getCodigo()%></option>
              
              <%
                }
@@ -53,7 +53,8 @@ body {
                <tr>
                     <th>Codigo</th>
                     <th>Nombre</th> 
-                    <th>Escuela</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
               </tr>
                 
               <%
@@ -64,7 +65,8 @@ body {
                <tr>
                   <td><%=estudiante.getCodigo()%></td>
                   <td><%=estudiante.getNombre()%></td> 
-                  <td><%=estudiante.getEscuela()%></td>
+                  <td><%=estudiante.getApellido()%></td>
+                  <td><%=estudiante.getEmail()%></td>
               </tr>
              
              <%
